@@ -12,8 +12,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   rootPathResponse(app);
-  setupSwagger(app);
   setupAppConfig(app);
+  setupSwagger(app);
 
   await app.listen(process.env.PORT);
 }
