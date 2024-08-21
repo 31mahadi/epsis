@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "d20c2659-5965-43e2-9d9b-b3cef584617f",
+		"name": "Epsis Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26247097"
+	},
+	"item": [
+		{
+			"name": "Read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/machine/production/collect?machine_type=maker&from=2023-01-01&to=2023-12-31&emp_id=EMP1",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"machine",
+						"production",
+						"collect"
+					],
+					"query": [
+						{
+							"key": "machine_type",
+							"value": "maker"
+						},
+						{
+							"key": "from",
+							"value": "2023-01-01"
+						},
+						{
+							"key": "to",
+							"value": "2023-12-31"
+						},
+						{
+							"key": "emp_id",
+							"value": "EMP1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Write",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2024-08-22\",\n    \"q1\": \"yes\",\n    \"q2\": \"no\",\n    \"q3\": \"not-mandatory\",\n    \"q4\": \"not-mandatory\",\n    \"q5\": \"no\",\n    \"machine\": {\n        \"id\": 1\n    },\n    \"user\": {\n        \"id\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/api/machine/production/submit",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"machine",
+						"production",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "http://localhost:3131",
+			"type": "string"
+		}
+	]
+}
